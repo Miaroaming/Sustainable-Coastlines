@@ -14,19 +14,19 @@ const ProductList = () => {
       setIsLoading(true);
       try {
         // Fetch donations products
-        const donationsResponse = await wooCommerceApi.get('/products', {
+        const donationsResponse = await wooCommerceApi.get('/products/', {
           params: { category: '17' }, // Replace with donations category ID or slug
         });
         setDonations(donationsResponse.data);
 
         // Fetch merchandise products
-        const merchandiseResponse = await wooCommerceApi.get('/products', {
+        const merchandiseResponse = await wooCommerceApi.get('/products/', {
           params: { category: '16' }, // Replace with merchandise category ID or slug
         });
         setMerchandise(merchandiseResponse.data);
 
         // Fetch other donations products
-        const otherDonationsResponse = await wooCommerceApi.get('/products', {
+        const otherDonationsResponse = await wooCommerceApi.get('/products/', {
           params: { category: '18' }, // Replace with other donations category ID or slug
         });
         setOtherDonations(otherDonationsResponse.data);
