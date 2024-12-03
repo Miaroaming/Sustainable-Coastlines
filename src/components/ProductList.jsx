@@ -65,7 +65,8 @@ const ProductList = () => {
               <p id='price'>Price: ${(product.prices.price / 100).toFixed(2)}</p>
               </div>
               
-              <p>{product.description}</p>
+              
+              <div dangerouslySetInnerHTML={{ __html: product.content.rendered }} />
               <button
                 className="secondary-btn"
                 onClick={() => handleAddToCart(product)}
