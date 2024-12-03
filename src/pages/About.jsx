@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import ContactForm from '../components/Contactform'
+import ContactForm from '../components/ContactForm'
 
 
 const About = () => {
