@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowUp } from "react-icons/fa";
+import Seo from '../components/Seo';
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL;
 
@@ -81,6 +82,11 @@ const Story = () => {
 
   return (
     <>
+    <Seo
+        title="Our Story - Sustainable Coastlines"
+        description="Browse our stories"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
           <div className='backarrow-header' onClick={handleBackClick}>

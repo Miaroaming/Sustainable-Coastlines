@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 // icons
 import { ImBin2 } from "react-icons/im";
@@ -65,6 +66,11 @@ const Home = () => {
 
   return (
     <>
+    <Seo
+        title="Home - Sustainable Coastlines"
+        description="Browse our homepage"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
             <img id='logo-dolphin' src="/images/logo-dolphins.png" alt="top-part-of-logo" />

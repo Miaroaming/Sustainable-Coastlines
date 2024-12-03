@@ -1,11 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
+import Seo from '../components/Seo'
 
 
 const About = () => {
   return (
     <>
+    <Seo
+        title="About - Sustainable Coastlines"
+        description="Browse our About page"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
             <h1>About Us</h1>

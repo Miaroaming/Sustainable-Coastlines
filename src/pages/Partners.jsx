@@ -1,6 +1,7 @@
 import react from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
+import Seo from '../components/Seo';
 
 const Partners = () => {
   const navigate = useNavigate();
@@ -11,6 +12,11 @@ const Partners = () => {
     }
   return (
     <>
+    <Seo
+        title="Partners - Sustainable Coastlines"
+        description="Browse our Partners"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
           <div className='backarrow-header' onClick={handleBackClick}>

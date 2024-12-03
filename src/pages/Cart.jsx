@@ -1,5 +1,6 @@
 import {useContext} from 'react'
 import { CartContext } from '../context/CartContext'
+import Seo from '../components/Seo';
 
 const Cart = () => {
   const { cart, updateCart, removeFromCart } = useContext(CartContext);
@@ -17,6 +18,11 @@ const Cart = () => {
   };
   return (
     <>
+    <Seo
+        title="Your Cart - Sustainable Coastlines"
+        description="Browse your cart"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
             <h1>Your Cart</h1>

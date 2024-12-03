@@ -1,9 +1,15 @@
 import React from 'react'
 import ProductList from '../components/ProductList'
+import Seo from '../components/Seo'
 
 const Shop = () => {
   return (
     <>
+    <Seo
+        title="Shop - Sustainable Coastlines"
+        description="Browse all our products"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
             <h1>Our Shop</h1>

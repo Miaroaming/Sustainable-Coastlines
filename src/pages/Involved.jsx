@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 const baseUrl = import.meta.env.VITE_WP_API_BASEURL;
 
@@ -12,12 +13,14 @@ const Involved = () => {
     const endpoint = `${baseUrl}/event?_embed`
 
     function getFeaturedImage(event) {
-        if (event && event._embedded && event._embedded['wp:featuredmedia'] && event._embedded['wp:featuredmedia'][0].source_url) {
-          return event._embedded['wp:featuredmedia'][0].source_url;
-        } else {
-          return 'https://via.placeholder.com/150';
-        }
+      let imageUrl = 'https://via.placeholder.com/150';
+      
+      if (event && event._embedded && event._embedded['wp:featuredmedia'] && event._embedded['wp:featuredmedia'][0].source_url) {
+        imageUrl = event._embedded['wp:featuredmedia'][0].source_url;
       }
+      
+      return imageUrl;
+    }
       
       useEffect(() => {
         axios.get(`${endpoint}&event_type=upcoming`)
@@ -54,7 +57,6 @@ const Involved = () => {
               <img id='event-img' src={getFeaturedImage(event)} alt={event.title.rendered + ' profile picture'}/>
                 <h2>{event.title.rendered}</h2>
                 <div dangerouslySetInnerHTML={{ __html: event.content.rendered }} />
-                {/* <a href={`#/event/${event.id}`}> <button className='secondary-btn'>Read more</button></a> */}
             </div>
           )
         })
@@ -70,6 +72,11 @@ const Involved = () => {
       }
   return (
     <>
+    <Seo
+        title="Involved - Sustainable Coastlines"
+        description="Browse our Get Involved page"
+        url={window.location.href}
+      />
     <div className='header'>
         <div className='header-text'>
             <h1>Get Involved</h1>
