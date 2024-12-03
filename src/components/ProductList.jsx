@@ -66,7 +66,7 @@ const ProductList = () => {
               </div>
               
               
-              <div dangerouslySetInnerHTML={{ __html: product.content.rendered }} />
+              <div dangerouslySetInnerHTML={{ __html: product.description }} />
               <button
                 className="secondary-btn"
                 onClick={() => handleAddToCart(product)}
